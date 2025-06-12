@@ -1,0 +1,16 @@
+[Unit]
+Description=Auto Shutdown Daemon for Idle System
+Documentation=https://github.com/YOUR_USERNAME/YOUR_REPONAME  # 替换成你的仓库地址
+After=network.target docker.service # 确保网络和Docker（如果需要）已启动
+
+[Service]
+Type=simple
+ExecStart=/opt/auto-shutdown-daemon/auto_shutdown_monitor.sh
+Restart=on-failure
+RestartSec=5s
+StandardOutput=append:/var/log/auto_shutdown.log
+StandardError=append:/var/log/auto_shutdown.log
+User=root # 需要root权限执行shutdown
+
+[Install]
+WantedBy=multi-user.target
