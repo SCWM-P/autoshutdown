@@ -13,7 +13,7 @@ LOG_FILE="/var/log/auto_shutdown.log"
 # 注意：这可能会误判一些系统自身的python脚本，需要谨慎设置
 # 或者更精确地匹配用户启动的，例如检查进程的TTY是否为pts
 # 为了简单起见，我们先做关键字匹配
-CRITICAL_PROCESSES_KEYWORDS=("python" "jupyter" "git")
+CRITICAL_PROCESSES_KEYWORDS=("python" "git")
 
 # --- 配置结束 ---
 
